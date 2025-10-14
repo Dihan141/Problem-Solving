@@ -4,6 +4,7 @@ moves = [[1, -2], [2, -1], [1, 2], [2, 1], [-2, 1], [-1, 2], [-2, -1], [-1, -2]]
 
 def isValid(posX, posY, n, visited):
     if((posX >= 0 and posX < n) and (posY >= 0 and posY < n) and not visited[posX][posY]):
+        visited[posX][posY] = True
         return True
     return False
 
@@ -12,7 +13,7 @@ def BFS(k, t, n):
 
     q = deque()
 
-    visited = [[False] * n] * n
+    visited = [[False] * n for _ in range(n)] 
 
     visited[s[0]][s[1]] = True
 
